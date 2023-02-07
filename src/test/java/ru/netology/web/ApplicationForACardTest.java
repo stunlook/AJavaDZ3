@@ -7,16 +7,19 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.openqa.selenium.chrome.ChromeOptions;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ApplicationForACardTest {
     private WebDriver driver;
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "/Java/IdeaProjects/AJavaDZ3/driver/chromedriver.exe");
     }
 
     @BeforeEach

@@ -16,14 +16,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ApplicationForACardTest {
     private WebDriver driver;
+    ChromeOptions options = new ChromeOptions();
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "/Java/IdeaProjects/AJavaDZ3/driver/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
     void setUp() {
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
         driver = new ChromeDriver();
     }
 
